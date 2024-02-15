@@ -1,4 +1,6 @@
 # https://xrpl.org/install-rippled-on-ubuntu.html
+# !/bin/bash
+
 sudo apt -y updates
 
 sudo apt -y install apt-transport-https ca-certificates wget gnupg
@@ -12,10 +14,10 @@ echo "deb [signed-by=/etc/apt/keyrings/ripple.gpg] https://repos.ripple.com/repo
 
 sudo apt -y update && sudo apt -y install rippled
 
-rm /opt/ripple/etc/rippled.cfg
+sudo systemctl start rippled.service
 
-cp ./config.cfg /opt/ripple/etc/rippled.cfg
+sudo rm /opt/ripple/etc/rippled.cfg
+
+sudo cp ./config.cfg /opt/ripple/etc/rippled.cfg
 
 systemctl status rippled.service
-
-sudo systemctl start rippled.service

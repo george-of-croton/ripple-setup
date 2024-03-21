@@ -18,6 +18,6 @@ sudo systemctl start rippled.service
 
 sudo rm /opt/ripple/etc/rippled.cfg
 
-sudo cp ./config.cfg /etc/opt/ripple/etc/rippled.cfg
+sudo cp ./config.cfg /etc/opt/ripple/rippled.cfg
 
 systemctl status rippled.service
